@@ -100,8 +100,8 @@ body {
   font-size: 1em;
 }
 
-.service-time * {
-  margin: auto;
+.service-time .lead {
+  margin: 0;
 }
 
 #who-we-are {
