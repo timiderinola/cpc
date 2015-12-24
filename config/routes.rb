@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+
+  resources :contacts, only: [:new, :create]
+
+  root 'static_pages#home'
+
+  get '/about', to: 'static_pages#about'
+
+  get '/events', to: 'static_pages#events'
+
+  get '/gallery', to: 'static_pages#gallery'
+
+  get '/resources', to: 'static_pages#resources'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,211 @@
+/* General Styling */
+body {
+  font-family: "Trebuchet MS", "Times New Roman", Arial, Times, serif;
+  padding: 83px 0 0;
+  position: relative;
+}
+
+#navbar {
+  border: none;
+}
+
+#upper_bar {
+  text-align: left;
+}
+
+#social-links {
+  padding-top: 8px;
+}
+
+#social-links li {
+  display: inline-block;
+}
+
+#social-links img {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+#second_bar {
+  text-align: center; 
+  background: #fff;
+  color: #000;
+}
+
+#nav-links li {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0.3em 1em;
+  float: none;
+}
+
+#nav-links a {
+  color: #000;
+  font-weight: bolder;
+}
+
+/*#menu {
+  margin-bottom: 25px;
+}*/
+
+#menu-button {
+  color: #fff;
+  font-weight: bolder;
+}
+
+#logo {
+  z-index: 20;
+  border-radius: 45%;
+}
+
+#logo, #logo * {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-brand {
+  display: none;
+}
+
+#pictures {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+#pictures .item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.owl-pagination {
+  margin-top: -4em !important;
+  z-index: 10;
+}
+
+#intro {
+  margin-top: 4em;
+  padding: 1em 0 2em;
+}
+
+#pastor-image {
+  margin: 0 1em 0 0;
+}
+
+/* Service Times */
+
+.service-time {
+  padding: 0.3em 0;
+  font-size: 1em;
+}
+
+.service-time * {
+  margin: auto;
+}
+
+#who-we-are {
+  background: url('blurred-grass.jpg') no-repeat;
+  background-size: cover;
+  background-position: 10% 80%;
+  color: #fff;
+  padding: 1em 0 3em;
+}
+
+/* Contact Page */
+
+#contact-page {
+  background: url('lifting-hands.jpg') no-repeat;
+  background-size: cover;
+  padding-top: 2em;
+  padding-bottom: 1em;
+}
+
+#form {
+  padding: 4em 1em;
+}
+
+#form-instructions {
+  font-size: 1em;
+}
+
+.contact-header {
+  color: #fff;
+  font-weight: bold;
+}
+
+.transparent {
+  opacity: 0.8;
+}
+
+/* Footer */
+#footer-row-1 {
+  padding-left: 3em;
+}
+
+#footer-row-2 {
+  text-align: center;
+}
+
+.footer {
+  bottom: 0;
+  padding: 1em;
+  background: url('white_wall_hash.png') no-repeat;
+  background-size: cover;
+}
+
+.footer h4 {
+  color: gray;
+}
+
+/* Media Queries */
+ @media (max-width: 770px) {
+  body {
+    padding: 87px 0 0;
+  }
+
+  #navbar {
+    margin: 0;
+  }
+
+  .navbar-brand {
+    display: inherit;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 4px;
+    padding: 0 8px;
+  }
+
+  #logo {
+    display: none !important;
+  }
+
+  #second_bar {
+    background: inherit;
+    color: #fff;
+  }
+
+  #nav-links a {
+    color: #fff;
+  }
+
+  #nav-links a:hover {
+    color: #000;
+  }
+
+  #nav-links a:visited {
+    color: grey;
+  }
+}
+
+@media (max-width: 600px) {
+  #nav-links li {
+    display: block;
+  }
+}
+
+@media (max-width: 966px) {
+  #nav-links li {
+    margin: 0.5em 2px;
+  }
+}
