@@ -1,5 +1,6 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :google_oauth2, ENV['287422847911-0jndenitrsdg4it0h8gqgmvb31sv7rq7.apps.googleusercontent.com'], ENV['41EsgtdjFJ2FJ98tJVzttSGE'], scope: 'userinfo.profile,youtube'
+
+  provider :google_oauth2, ENV['CLIENT_ID'], ENV['CLIENT_SECRET'], scope: 'userinfo.profile,youtube'
 
   OmniAuth.config.on_failure do |env|
     error_type = env['omniauth.error.type']
