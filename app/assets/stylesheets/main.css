@@ -156,6 +156,12 @@ body {
   opacity: 0.8;
 }
 
+/* Video upload */
+
+.preloader {
+  display: none;
+}
+
 /* Footer */
 #footer-row-1 {
   padding-left: 3em;

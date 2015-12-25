@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :contacts, only: [:new, :create]
+  resources :videos, only: [:new, :index]
 
   root 'static_pages#home'
 
@@ -11,6 +12,12 @@ Rails.application.routes.draw do
   get '/gallery', to: 'static_pages#gallery'
 
   get '/resources', to: 'static_pages#resources'
+
+  get '/auth/:provider/callback', to: 'sessions#create'
+  get '/auth/failure', to: 'sessions#fail'
+  post '/videos/get_upload_token', to: 'videos#get_upload_token', as: :get_upload_token
+  get '/videos/get_video_uid', to: 'videos#get_video_uid', as: :get_video_uid
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
