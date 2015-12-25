@@ -13,7 +13,7 @@ class VideosController < ApplicationController
 
     if current_user
       youtube = YouTubeIt::OAuth2Client.new(client_access_token: current_user.token,
-                                            dev_key: ENV['AIzaSyDMzS7mqM-bu7RMR3wzljhKz1M-OVoPk5Q'])
+                                            dev_key: ENV['GOOGLE_DEV_KEY'])
 
       upload_info = youtube.upload_token(temp_params, get_video_uid_url)
 
@@ -26,7 +26,7 @@ class VideosController < ApplicationController
   def get_video_uid
     video_uid = params[:id]
     v = current_user.videos.build(uid: video_uid)
-    youtube = YouTubeIt::OAuth2Client.new(dev_key: ENV['AIzaSyDMzS7mqM-bu7RMR3wzljhKz1M-OVoPk5Q'])
+    youtube = YouTubeIt::OAuth2Client.new(dev_key: ENV['GOOGLE_DEV_KEY'])
     yt_video = youtube.video_by(video_uid)
     v.title = yt_video.title
     v.description = yt_video.description
