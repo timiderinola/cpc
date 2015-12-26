@@ -8,14 +8,11 @@ $(document).ready(function() {
     transitionStyle: "fade"
   });
 
-  $("#services").owlCarousel({
-    autoPlay: 4000,
-    slideSpeed: 600,
-    paginationSpeed: 800,
-    singleItem: true,
-    stopOnHover: true,
-    transitionStyle: "fade"
-  });
+    $("#gallery-slides").owlCarousel({
+        items : 4,
+        lazyLoad : true,
+        navigation : true
+    });
 
     //for video upload
     var submit_button = $('#submit_pre_upload_form');
