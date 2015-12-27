@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :contacts, only: [:new, :create]
-  resources :videos, only: [:new, :index]
+  resources :videos, only: [:index, :new, :create]
 
   root 'static_pages#home'
 

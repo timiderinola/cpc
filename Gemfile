@@ -6,7 +6,10 @@ gem 'turbolinks_transitions'
 gem 'mail_form'
 gem 'simple_form'
 gem 'omniauth-google-oauth2'
-gem 'youtube_it', github: 'bodrovis/youtube_it'
+gem 'yt', '~> 0.13.7'
+gem 'autoprefixer-rails'
+gem 'rails-observers'
+gem 'active_type', '0.3.1'
 
 group :development do
   # Use sqlite3 as the database for Active Record
