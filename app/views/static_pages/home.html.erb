@@ -20,15 +20,13 @@
             Nulla consequat massa quis enim. Phasellus blandit leo ut odio. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Nunc nonummy metus. Curabitur vestibulum aliquam leo. Vestibulum fringilla pede sit amet augue. Etiam ultricies nisi vel augue. Etiam iaculis nunc ac metus. Praesent ut ligula non mi varius sagittis. Fusce a quam. Aliquam erat volutpat. In hac habitasse platea dictumst. Fusce risus nisl, viverra et, tempor et, pretium in, sapien. Aenean viverra rhoncus pede. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Suspendisse nisl elit, rhoncus eget, elementum ac, condimentum eget, diam.
           </p>
           <div class="row text-center">
-            <h4 class="text-left">View Recent Videos</h4>
+            <h4 class="text-left">Recent Videos</h4>
             <div class="col-sm-8" style="padding: 0;">
               <%= render 'videos/home_index' %>
             </div>
             <div class="col-sm-4">
-              <h4>Recent Videos</h4>
-              <ul>
-                <li><a href="">Video 1</a></li>
-                <li><a href="">Video 2</a></li>
+              <ul class="video_thumbs">
+                <%= render 'videos/video_thumbnails' %>
               </ul>
               <%= link_to 'See more...', resources_path %>
             </div>
