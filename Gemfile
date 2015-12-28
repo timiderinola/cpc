@@ -5,10 +5,10 @@ gem 'bootstrap-sass', '3.1.1.0'
 gem 'turbolinks_transitions'
 gem 'mail_form'
 gem 'simple_form'
-gem 'omniauth-google-oauth2'
 gem 'yt', '~> 0.13.7'
-gem 'autoprefixer-rails'
 gem 'rails-observers'
+gem 'autoprefixer-rails'
+gem 'omniauth-google-oauth2'
 gem 'active_type', '0.3.1'
 
 group :development do

@@ -3,6 +3,7 @@
 
   <%= form_for @video do |f| %>
       <%= render 'shared/flash_msg', object: @video %>
+      <%= render 'shared/errors', object: @video %>
 
       <div class="form-group">
         <%= f.label :link %>
