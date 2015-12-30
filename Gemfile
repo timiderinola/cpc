@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.5'
 
 gem 'rails', '4.1.8'
 gem 'bootstrap-sass', '3.1.1.0'
@@ -30,7 +31,6 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
   gem 'unicorn'
-  # gem 'net-ssh'
 end
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

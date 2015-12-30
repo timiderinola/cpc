@@ -6,6 +6,23 @@
         <li><a href="#"><%= image_tag 'twitter-icon.png', alt: 'Twitter' %></a></li>
         <li><a href="#"><%= image_tag 'youtube-icon.png', alt: 'Youtube' %></a></li>
         <li><a href="#"><%= image_tag 'google-plus-icon.png', alt: 'Google+' %></a></li>
+        <% if logged_in? %>
+            <li id="fat-menu" class="pull-right dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user"></span> Admin <b class="caret"></b>
+              </a>
+              <ul id="dropdown" class="dropdown-menu">
+                <li><a href="#">Manage Posts</a></li>
+                <li><a href="#">Manage Resources</a></li>
+                <li id="divider" class="divider"></li>
+                <li>
+                  <%= link_to 'Log out', logout_path, method: 'delete' %>
+                </li>
+              </ul>
+            </li>
+        <% else %>
+            <li class="pull-right" style="color: #fff;"><%= link_to content_tag(:span, '', class: 'glyphicon glyphicon-user'), login_path %></li>
+        <% end %>
       </ul>
     </div>
     <div  id="second_bar" class="container-fluid">

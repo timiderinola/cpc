@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :contacts, only: [:new, :create]
-  resources :videos, only: [:index, :new, :create]
+  resources :users
+  resources :sessions,              only: [:new, :create, :destroy]
+  resources :contacts,              only: [:new, :create]
+  resources :videos,                only: [:index, :new, :create]
 
   root 'static_pages#home'
 
@@ -12,6 +14,11 @@ Rails.application.routes.draw do
   get '/gallery', to: 'static_pages#gallery'
 
   get '/resources', to: 'static_pages#resources'
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
   get '/auth/:provider/callback', to: 'sessions#create'
   get '/auth/failure', to: 'sessions#fail'
