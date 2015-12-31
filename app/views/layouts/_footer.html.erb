@@ -4,6 +4,14 @@
       <div class="col-sm-4">
         <h4>QUICK LINKS</h4>
         <div class="well"></div>
+        <ul id="quick-links">
+          <li><%= link_to 'Home', root_path, class: 'selected' %></li>
+          <li><%= link_to 'About Us', about_path %></li>
+          <li><%= link_to 'Events', events_path %></li>
+          <li><%= link_to 'videos', videos_path %></li>
+          <li><%= link_to 'Gallery', gallery_path %></li>
+          <li><%= link_to 'Contact Form', new_contact_path %></li>
+        </ul>
       </div>
       <div class="col-sm-4">
         <h4>WORSHIP WITH US</h4>

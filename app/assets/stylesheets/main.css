@@ -3,10 +3,19 @@ body {
   font-family: "Trebuchet MS", "Times New Roman", Arial, Times, serif;
   padding: 83px 0 0;
   position: relative;
+  width: 100%;
+  margin: 0%;
 }
 
 .alert {
-  margin-top: 30px;
+  position: absolute;
+  width: 97%;
+  top: 120px;
+  z-index: 30;
+  box-shadow: 0.5em 0 1em 5px #264348;
+  -moz-box-shadow: 0.5em 0 1em 5px #264348;
+  -webkit-box-shadow: 0.5em 0 1em 5px #264348;
+  -o-box-shadow: 0.5em 0 1em 5px #264348;
 }
 
 #navbar {
@@ -56,6 +65,10 @@ body {
   text-align: center; 
   background: #fff;
   color: #000;
+  box-shadow: 0.5em 0 1em 5px #264348;
+  -moz-box-shadow: 0.5em 0 1em 5px #264348;
+  -webkit-box-shadow: 0.5em 0 1em 5px #264348;
+  -o-box-shadow: 0.5em 0 1em 5px #264348;
 }
 
 .nav li a:hover,
@@ -69,7 +82,7 @@ body {
 }
 
 #nav-links li#logo a:hover {
-  border-bottom: none;
+  border-bottom: 2px solid #fff;
 }
 
 #nav-links li {
@@ -220,6 +233,42 @@ body {
   display: none;
 }
 
+/* Resources Page */
+#videos-index {
+  padding: 6em 1em 3em;
+  background: #666666;
+  height: 100%;
+}
+
+#video-player {
+  height: 100%;
+}
+
+#videos-index iframe {
+  box-shadow: 0.5em 0 1em 5px #264348;
+  -moz-box-shadow: 0.5em 0 1em 5px #264348;
+  -webkit-box-shadow: 0.5em 0 1em 5px #264348;
+  -o-box-shadow: 0.5em 0 1em 5px #264348;
+  border: 3px solid #555;
+  height: 400px;
+  width: 750px;
+}
+
+#videos-index li {
+  list-style: none;
+  margin: 1.5em 0;
+}
+
+#new-video {
+  width: 70%;
+  padding: 6em;
+}
+
+/* Login Page */
+#login-page {
+  padding: 6em;
+}
+
 /* Footer */
 #footer-row-1 {
   padding-left: 3em;
@@ -231,10 +280,8 @@ body {
 
 .footer {
   bottom: 0;
-  padding: 1em;
-  margin-top: 3em;
-  background: url('white_wall_hash.png') no-repeat;
-  background: #333;
+  padding: 4em 1em 1em;
+  background: #222222;
   color: #adadad;
   background-size: cover;
 }
@@ -302,6 +349,10 @@ body {
   #nav-links a:visited {
     color: grey;
   }
+
+  .alert {
+    width: 91%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -310,8 +361,14 @@ body {
   }
 }
 
-@media (max-width: 966px) {
+@media (max-width: 992px) {
   #nav-links li {
-    margin: 0.5em 2px;
+    padding: 0.3em 4px;
+    margin: 0.5em 0;
+  }
+
+  #videos-index iframe {
+    height: auto;
+    width: auto;
   }
 }

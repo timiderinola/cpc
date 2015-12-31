@@ -1,39 +1,32 @@
-<div class="jumbotron">
-  <div class="container">
-    <h1>Share your videos with the world!</h1>
-    <p>Click the button below to share your video from YouTube.</p>
-    <p>
-      <%= link_to 'Add video now!', new_video_path, class: 'btn btn-primary btn-lg' %>
-    </p>
+<% provide(:title, 'Videos') %>
+
+<div  id="videos-index" class="container-fluid">
+  <div class="row" style="height: 100%;">
+    <div id="video-player" class="col-sm-10">
+      <div class="text-center" style="height: 100%;">
+        <% @video = Video.first %>
+        <% if @video %>
+            <%= content_tag(:iframe, '',
+                            src: "http://www.youtube.com/embed/#{@video.uid}?autoplay=0") %>
+        <% end %>
+      </div>
+    </div>
+    <div id="video-playlist" class="col-sm-2 text-center">
+      <h4 class="text-center">ALL VIDEOS</h4>
+      <% if logged_in? %>
+        <%= link_to 'Add a new video!', new_video_path, class: 'btn btn-default' %>
+      <% end %>
+      <% @videos = Video.all.order('created_at DESC') %>
+      <% if @videos %>
+          <% @videos.each do |video| %>
+              <li>
+                <%= link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,
+                                      class: 'img img-responsive img-rounded'), "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank' %>
+                <b class="text-center"><%= video.title%></b>
+              </li>
+          <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<% if @videos.any? %>
-    <div class="container">
-      <h1>Latest videos</h1>
-      <div id="player-wrapper"></div>
-      <% @videos.in_groups_of(3) do |group| %>
-          <div class="row">
-            <% group.each do |video| %>
-                <% if video %>
-                    <div class="col-md-4">
-                      <div class="yt_video thumbnail">
-                        <%= link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,
-                                              class: 'img-rounded'),
-                                    "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank' %>
-                        <div class="caption">
-                          <h5><%= video.title %></h5>
-                          <p>Published at <%= video.created_at.strftime('%-d %B %Y %H:%M:%S') %></p>
-                          <p>
-                            <span class="glyphicon glyphicon glyphicon-thumbs-up"></span> <%= video.likes %>
-                            <span class="glyphicon glyphicon glyphicon-thumbs-down"></span> <%= video.dislikes %>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                <% end %>
-            <% end %>
-          </div>
-      <% end %>
-    </div>
-<% end %>

@@ -1,1 +1,29 @@
 <% provide(:title, 'Resources') %>
+
+<div  id="videos-index" class="container-fluid">
+  <div class="row" style="height: 100%;">
+    <div id="video-player" class="col-sm-10">
+      <div class="text-center" style="height: 100%;">
+        <% @video = Video.first %>
+        <% if @video %>
+            <%= content_tag(:iframe, '',
+                            src: "http://www.youtube.com/embed/#{@video.uid}?autoplay=0") %>
+        <% end %>
+      </div>
+    </div>
+    <div id="video-playlist" class="col-sm-2">
+      <h4 class="text-center">ALL VIDEOS</h4>
+      <% @videos = Video.all.order('created_at DESC') %>
+      <% if @videos %>
+          <% @videos.each do |video| %>
+              <li>
+                <%= link_to image_tag("https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,
+                                      class: 'img img-responsive img-rounded'), "https://www.youtube.com/watch?v=#{video.uid}", target: '_blank' %>
+                <b class="text-center"><%= video.title%></b>
+              </li>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

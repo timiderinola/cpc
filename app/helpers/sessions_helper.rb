@@ -17,6 +17,13 @@ module SessionsHelper
     !self.current_user.nil?
   end
 
+  def logged_in_user
+    if !logged_in?
+      redirect_to login_path,
+                  alert: 'Sorry, you need to be logged in to access that page.'
+    end
+  end
+
   def logout
     self.current_user = nil
     cookies.delete(:remember_token)
