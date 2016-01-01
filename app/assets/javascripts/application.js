@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require jquery.turbolinks
 //= require turbolinks_transitions
+//= require ckeditor/init
 //= require_tree .

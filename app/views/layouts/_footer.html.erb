@@ -7,8 +7,13 @@
         <ul id="quick-links">
           <li><%= link_to 'Home', root_path, class: 'selected' %></li>
           <li><%= link_to 'About Us', about_path %></li>
-          <li><%= link_to 'Events', events_path %></li>
-          <li><%= link_to 'videos', videos_path %></li>
+          <% @message = Message.last %>
+          <% if @message %>
+              <li>
+                <%= link_to @message.title, @message %>
+              </li>
+          <% end %>
+          <li><%= link_to 'Videos', videos_path %></li>
           <li><%= link_to 'Gallery', gallery_path %></li>
           <li><%= link_to 'Contact Form', new_contact_path %></li>
         </ul>

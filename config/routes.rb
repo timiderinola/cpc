@@ -1,29 +1,28 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   resources :users
   resources :sessions,              only: [:new, :create, :destroy]
   resources :contacts,              only: [:new, :create]
-  resources :videos,                only: [:index, :new, :create]
+  resources :videos,                only: [:index, :new, :create], path_names: { new: 'add-video', edit: 'change' }
+  resources :messages do
+    resources :comments, :only => [:create, :destroy]
+  end
 
   root 'static_pages#home'
 
   get '/about', to: 'static_pages#about'
-
-  get '/events', to: 'static_pages#events'
-
   get '/gallery', to: 'static_pages#gallery'
-
   get '/resources', to: 'static_pages#resources'
-
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/logout', to: 'sessions#destroy'
 
-  get '/auth/:provider/callback', to: 'sessions#create'
-  get '/auth/failure', to: 'sessions#fail'
-  post '/videos/get_upload_token', to: 'videos#get_upload_token', as: :get_upload_token
-  get '/videos/get_video_uid', to: 'videos#get_video_uid', as: :get_video_uid
+  # get '/auth/:provider/callback', to: 'sessions#create'
+  # get '/auth/failure', to: 'sessions#fail'
+  # post '/videos/get_upload_token', to: 'videos#get_upload_token', as: :get_upload_token
+  # get '/videos/get_video_uid', to: 'videos#get_video_uid', as: :get_video_uid
 
 
   # The priority is based upon order of creation: first created -> highest priority.

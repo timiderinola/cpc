@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   before_save { self.email.downcase! }
   before_save :create_remember_token
 
-  has_many :microposts, dependent: :destroy
+  has_many :messages
 
   has_secure_password
 

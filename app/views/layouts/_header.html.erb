@@ -12,8 +12,8 @@
                 <span class="glyphicon glyphicon-user"></span> Admin <b class="caret"></b>
               </a>
               <ul id="dropdown" class="dropdown-menu">
-                <li><a href="#">Manage Posts</a></li>
-                <li><a href="#">Manage Resources</a></li>
+                <li><%= link_to 'Add a Message', new_message_path %></li>
+                <li><%= link_to 'Add a Video', new_video_path %></li>
                 <li id="divider" class="divider"></li>
                 <li>
                   <%= link_to 'Log out', logout_path, method: 'delete' %>
@@ -39,7 +39,7 @@
         <ul id="nav-links" class="nav container">
           <li><%= link_to 'HOME', root_path, class: 'selected' %></li>
           <li><%= link_to 'WHO WE ARE', about_path %></li>
-          <li><%= link_to 'MESSAGES', events_path %></li>
+          <li><%= link_to 'MESSAGES', messages_path %></li>
           <li id="logo">
             <%= link_to image_tag('evg_logo.png', alt: 'Logo'), root_path %>
           </li>

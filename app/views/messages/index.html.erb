@@ -1,0 +1,14 @@
+<% @messages.each do |message| %>
+  <h2><%= link_to message.title, message %></h2>
+  <p><i><%= friendly_date message.created_at %></i></p>
+  <p><%= raw message.content %></p>
+  <p>
+    <%= link_to 'Edit', edit_message_path(message) %>
+    <%= link_to 'Destroy', message, method: :delete,
+          data: { confirm: 'Are you sure?' } %>
+  </p>
+<% end %>
+
+<br>
+
+<%= link_to 'New Message', new_message_path %>

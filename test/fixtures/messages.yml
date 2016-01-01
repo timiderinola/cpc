@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  content: MyText
+  bible_passage: MyString
+  preacher: MyString
+  user_id: 
+
+two:
+  title: MyString
+  content: MyText
+  bible_passage: MyString
+  preacher: MyString
+  user_id: 

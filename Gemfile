@@ -11,6 +11,9 @@ gem 'rails-observers'
 gem 'autoprefixer-rails'
 gem 'omniauth-google-oauth2'
 gem 'active_type', '0.3.1'
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development do
   # Use sqlite3 as the database for Active Record

@@ -13,12 +13,28 @@
   <div class="container-fluid" id="intro">
     <div class="container">
       <div class="row">
-        <div class="col-sm-7">
-          <%= image_tag 'pastor.jpg', id:'pastor-image', class:'img img-responsive img-thumbnail', align:'left', alt:'Pastor' %>
-          <p class="lead">Dearly Beloved,</p>
-          <p class="text-justify">
-            Nulla consequat massa quis enim. Phasellus blandit leo ut odio. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Nunc nonummy metus. Curabitur vestibulum aliquam leo. Vestibulum fringilla pede sit amet augue. Etiam ultricies nisi vel augue. Etiam iaculis nunc ac metus. Praesent ut ligula non mi varius sagittis. Fusce a quam. Aliquam erat volutpat. In hac habitasse platea dictumst. Fusce risus nisl, viverra et, tempor et, pretium in, sapien. Aenean viverra rhoncus pede. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Suspendisse nisl elit, rhoncus eget, elementum ac, condimentum eget, diam.
-          </p>
+        <div class="col-sm-7 text-justify">
+          <div class="row">
+            <div class="col-sm-4 text-center">
+              <%= image_tag 'pastor.png', id:'pastor-image', class:'img img-responsive img-thumbnail img-rounded', alt:'Pastor' %>
+            </div>
+            <div class="col-sm-8">
+              <p class="lead">Dearly Beloved,</p>
+              <p class="text-justify">
+                Nulla consequat massa quis enim. Phasellus blandit leo ut odio. Integer ante arcu, accumsan a, consectetuer
+                eget, posuere ut, mauris. Nunc nonummy metus. Curabitur vestibulum aliquam leo. Vestibulum fringilla pede
+                sit amet augue. Etiam ultricies nisi vel augue. Etiam iaculis nunc ac metus. Praesent ut ligula non mi
+                varius sagittis.
+              </p>
+              <% @message = Message.last %>
+              <% if @message %>
+                  <p class="text-justify">
+                    Read our most recent sermon, <%= link_to @message.title, @message %> by <%= @message.preacher %>.
+                    You are welcome to drop your questions or contributions.
+                  </p>
+              <% end %>
+            </div>
+          </div>
           <div class="row text-center">
             <h4 class="text-left">Recent Videos</h4>
             <div class="col-sm-8" style="padding: 0;">
