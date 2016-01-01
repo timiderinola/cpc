@@ -11,23 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br> <%# label for = "post_title" according to convention %>
-    <%= f.text_field :title %> <%# id="post_title"%>
-  </div>
-  <div class="field">
-    <%= f.label :bible_passage %><br> <%# label for = "post_title" according to convention %>
-    <%= f.text_field :bible_passage %> <%# id="post_title"%>
-  </div>
-  <div class='field'>
-    <%= f.label :preacher %><br>
-    <%= f.text_field :preacher %>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= f.label :title %><br>
+        <%= f.text_field :title, class:'form-control', placeholder:'Message title', required: true %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= f.label :bible_passage %><br>
+        <%= f.text_field :bible_passage, class:'form-control', value:'Bible Passages', placeholder:'Gen 1:1; Prov 4:8; 9:5', required: true %>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="form-group">
+        <%= f.label :preacher %><br>
+        <%= f.text_field :preacher, class:'form-control', placeholder:'Preacher', required: true %>
+      </div>
+    </div>
   </div>
   <div class="field">
     <%= f.label :content %><br>
-    <%= f.cktext_area :content, :ckeditor => {:language => 'en'} %>
+    <%= f.cktext_area :content, :ckeditor => {:language => 'en'}, required: true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class:'btn btn-primary' %>
   </div>
 <% end %>

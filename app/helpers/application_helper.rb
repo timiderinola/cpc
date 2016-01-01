@@ -9,6 +9,6 @@ module ApplicationHelper
   end
 
   def friendly_date(d)
-    d.strftime("%B %e,%Y")
+    d.strftime("%B %e, %Y")
   end
 end

@@ -1,14 +1,22 @@
-<% @messages.each do |message| %>
-  <h2><%= link_to message.title, message %></h2>
-  <p><i><%= friendly_date message.created_at %></i></p>
-  <p><%= raw message.content %></p>
-  <p>
-    <%= link_to 'Edit', edit_message_path(message) %>
-    <%= link_to 'Destroy', message, method: :delete,
-          data: { confirm: 'Are you sure?' } %>
-  </p>
-<% end %>
+<% provide(:title, "Messages") %>
 
-<br>
+<div id="messages-index" class="container">
+  <% @messages.each do |message| %>
+      <h2><%= link_to message.title, message %></h2>
+      <p><i><%= friendly_date message.created_at %></i> by <u><%= message.preacher %></u></p>
+      <p><%= raw message.content %></p>
+      <% if logged_in? %>
+          <p>
+            <%= link_to 'Edit', edit_message_path(message) %>
+            <%= link_to 'Destroy', message, method: :delete,
+                        data: { confirm: 'Are you sure?' } %>
+          </p>
+      <% end %>
+  <% end %>
 
-<%= link_to 'New Message', new_message_path %>
+  <br>
+  <% if logged_in? %>
+      <%= link_to 'New Message', new_message_path %>
+  <% end %>
+</div>
+

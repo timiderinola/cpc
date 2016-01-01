@@ -9,9 +9,9 @@
         <div class="text-left">
           <%= form_for(:session, url: sessions_path) do |f| %>
               <%= label_tag :username %>
-              <%= f.text_field :username, class: "form-control", placeholder: "Username", required: 'required', autofocus: 'autofocus' %>
+              <%= f.text_field :username, class: "form-control", placeholder: "Username", required: true, autofocus: 'autofocus' %>
               <%= label_tag :password %>
-              <%= f.password_field :password, class: "form-control", placeholder: "Password (6 characters minimum)", required: 'required', minlength: "6", maxlength: "20" %>
+              <%= f.password_field :password, class: "form-control", placeholder: "Password (6 characters minimum)", required: true, minlength: "6", maxlength: "20" %>
               <br>
               <%= f.submit 'Login', class: 'btn btn-lg btn-primary btn-block' %>
           <% end %>

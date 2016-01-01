@@ -259,14 +259,24 @@ body {
   margin: 1.5em 0;
 }
 
-#new-video {
-  width: 70%;
-  padding: 6em;
+#add-video {
+  padding-top: 6em;
+  padding-bottom: 6em;
 }
 
 /* Login Page */
 #login-page {
   padding: 6em;
+}
+
+/* Messages */
+#messages-index, #new-message, #show-message, #edit-message {
+  padding-top: 4em;
+  padding-bottom: 4em;
+}
+
+#messages-index p, #show-message p {
+  text-align: justify !important;
 }
 
 /* Footer */

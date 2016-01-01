@@ -1,6 +1,11 @@
-<h2>Editing post</h2>
+<% provide(:title, "#{@message.title}") %>
 
-<%= render 'form' %>
+<div id="edit-message" class="container">
+  <h2>Edit Message</h2>
 
-<%= link_to 'Show', @message %> |
-<%= link_to 'Back', messages_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @message %> |
+  <%= link_to 'Back', messages_path %>
+</div>
+
