@@ -12,6 +12,7 @@ gem 'autoprefixer-rails'
 gem 'omniauth-google-oauth2'
 gem 'active_type', '0.3.1'
 gem 'ckeditor'
+gem 'ckeditor-imgur'
 gem 'carrierwave'
 gem 'mini_magick'
 

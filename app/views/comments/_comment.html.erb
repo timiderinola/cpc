@@ -1,8 +1,8 @@
 <p><%= comment.author %> said:</p>
 
 <blockquote>
-  <%= comment.content %>
+  <%= raw comment.content %>
 </blockquote>
 
-<%= link_to 'Destroy', [comment.message, comment],
+<%= link_to 'Remove comment', [comment.message, comment],
             method: :delete, data: { comfirm: 'Are you sure?' } %>

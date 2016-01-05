@@ -50,6 +50,7 @@ GEM
     ckeditor (4.1.5)
       cocaine
       orm_adapter (~> 0.5.0)
+    ckeditor-imgur (1.0.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -202,6 +203,7 @@ DEPENDENCIES
   bootstrap-sass (= 3.1.1.0)
   carrierwave
   ckeditor
+  ckeditor-imgur
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails

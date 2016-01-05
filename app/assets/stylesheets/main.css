@@ -270,13 +270,53 @@ body {
 }
 
 /* Messages */
-#messages-index, #new-message, #show-message, #edit-message {
+#messages-index, #new-message, #edit-message {
   padding-top: 4em;
   padding-bottom: 4em;
 }
 
-#messages-index p, #show-message p {
-  text-align: justify !important;
+#messages-index p.btn a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+#show-message {
+  box-shadow: 0.5em 0 1em 5px #264348;
+  -moz-box-shadow: 0.5em 0 1em 5px #264348;
+  -webkit-box-shadow: 0.5em 0 1em 5px #264348;
+  -o-box-shadow: 0.5em 0 1em 5px #264348;
+  margin-top: 4em;
+  margin-bottom: 4em;
+  max-width: 70%;
+  padding: 2em;
+  border-radius: 20px;
+}
+
+#message-title {
+  background: #337ab7;
+  color: #fff;
+  padding: 1em;
+  border-radius: 15px;
+}
+
+#show-message p {
+  text-align: justify;
+}
+
+#show-message img {
+  border: 0;
+  display: block;
+  max-width: 60%;
+  height: auto;
+  border-radius: 6px;
+  margin: auto;
+}
+
+.message-thumb {
+  padding: 2em;
+  border: 2px solid #337ab7;
+  border-radius: 5px;
+  margin-right: 1em;
 }
 
 /* Footer */
@@ -362,6 +402,17 @@ body {
 
   .alert {
     width: 91%;
+  }
+
+  #show-message {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -o-box-shadow: none;
+      box-shadow: none;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    max-width: 99%;
+    padding: 0.5em;
   }
 }
 
