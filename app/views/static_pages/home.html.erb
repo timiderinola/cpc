@@ -29,7 +29,7 @@
               <% @message = Message.last %>
               <% if @message %>
                   <p class="text-justify">
-                    Read our most recent sermon, <%= link_to @message.title, @message.title %> by <%= @message.preacher %>.
+                    Read our most recent sermon, <%= link_to @message.title, @message %> by <%= @message.preacher %>.
                     You are welcome to drop your questions or contributions.
                   </p>
               <% end %>
