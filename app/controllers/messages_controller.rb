@@ -11,6 +11,9 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @message = Message.find_by(id: params[:id])
+    title = @message.title
+    @message = Message.find_by_title(title)
   end
 
   def edit

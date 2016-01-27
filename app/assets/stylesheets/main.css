@@ -71,6 +71,10 @@ body {
   -o-box-shadow: 0.5em 0 1em 5px #264348;
 }
 
+.login-image {
+  margin-right: 1.5em;
+}
+
 .nav li a:hover,
 .nav li a:focus {
   text-decoration: none;
@@ -123,6 +127,7 @@ body {
 #home-page {
   padding: 0;
   margin: 0;
+  padding-bottom: 3em;
 }
 
 #pictures {
@@ -176,6 +181,8 @@ body {
   background-position: 10% 80%;
   color: #fff;
   padding: 1em 0 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 #gallery-slides .item{
