@@ -36,16 +36,17 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="navbar-collapse">
+        <% @message = Message.last %>
         <ul id="nav-links" class="nav container">
-          <li><%= link_to 'HOME', root_path, class: 'selected' %></li>
-          <li><%= link_to 'WHO WE ARE', about_path %></li>
-          <li><%= link_to 'MESSAGES', messages_path %></li>
+          <li><%= nav_link_to 'HOME', root_path %></li>
+          <li><%= nav_link_to 'WHO WE ARE', about_path %></li>
+          <li><%= nav_link_to 'MESSAGES', @message %></li>
           <li id="logo">
-            <%= link_to image_tag('evg_logo.png', alt: 'Logo'), root_path %>
+            <%= image_tag ('evg_logo.png'), alt: 'Logo' %>
           </li>
-          <li><%= link_to 'VIDEOS', videos_path %></li>
-          <li><%= link_to 'GALLERY', gallery_path %></li>
-          <li><%= link_to 'CONTACT', new_contact_path %></li>
+          <li><%= nav_link_to 'VIDEOS', videos_path %></li>
+          <li><%= nav_link_to 'GALLERY', gallery_path %></li>
+          <li><%= nav_link_to 'CONTACT', new_contact_path %></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

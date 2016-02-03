@@ -1,42 +1,55 @@
 <% provide(:title, "#{@message.title}") %>
+<div class="row">
+  <div id="message-container">
+    <div id="show-message" class="col-sm-10 container">
+      <p id="notice"><%= notice %></p>
 
-<div id="show-message" class="container">
-  <p id="notice"><%= notice %></p>
+      <h2 class="text-center" id="message-title"><%= @message.title %></h2>
+      <p class="text-left"><i><%= friendly_date @message.created_at %></i> by <u><%= @message.preacher %></u></p>
+      <p class="text-left"><b>Bible Passages: <%= @message.bible_passage %></b></p>
+      <hr>
+      <p><%= raw @message.content %></p>
 
-  <h2 class="text-center" id="message-title"><%= @message.title %></h2>
-  <p class="text-left"><i><%= friendly_date @message.created_at %></i> by <u><%= @message.preacher %></u></p>
-  <p class="text-left"><b>Bible Passages: <%= @message.bible_passage %></b></p>
-  <hr>
-  <p><%= raw @message.content %></p>
+      <% if logged_in? %>
+          <%= link_to content_tag(:span, '', class:'glyphicon glyphicon-edit', title: 'Edit'), edit_message_path(@message) %> |
+      <% end %>
+      <%= link_to content_tag(:span, '', class:'glyphicon glyphicon-arrow-left', title: 'Back'), messages_path %>
 
-  <% if logged_in? %>
-      <%= link_to content_tag(:span, '', class:'glyphicon glyphicon-edit', title: 'Edit'), edit_message_path(@message) %> |
-  <% end %>
-  <%= link_to content_tag(:span, '', class:'glyphicon glyphicon-arrow-left', title: 'Back'), messages_path %>
+      <h3>Comments</h3>
 
-  <h3>Comments</h3>
+      <%= render @message.comments %>
 
-  <%= render @message.comments %>
-
-  <%= form_for [@message, @message.comments.build] do |f| %>
-      <div class='form-group'>
-        <div class="row">
-          <div class="col-sm-6">
-            <%= f.label :author %><br>
-            <%= f.text_field :author, class: 'form-control', placeholder:'Your name', required:'required' %>
+      <%= form_for [@message, @message.comments.build] do |f| %>
+          <div class='form-group'>
+            <div class="row">
+              <div class="col-sm-6">
+                <%= f.label :author %><br>
+                <%= f.text_field :author, class: 'form-control', placeholder:'Your name', required:'required' %>
+              </div>
+              <div class="col-sm-6">
+                <%= f.label :email %><br>
+                <%= f.text_field :email, class: 'form-control', placeholder:'Your email address' %>
+              </div>
+            </div>
           </div>
-          <div class="col-sm-6">
-            <%= f.label :email %><br>
-            <%= f.text_field :email, class: 'form-control', placeholder:'Your email address' %>
+          <div class='form-group'>
+            <%= f.label :content %><br>
+            <%= f.cktext_area :content, :ckeditor => {language: 'en', toolbar: 'comment'}, required: true, class: 'form-control', placeholder:'Your comments/questions' %>
           </div>
-        </div>
-      </div>
-      <div class='form-group'>
-        <%= f.label :content %><br>
-        <%= f.cktext_area :content, :ckeditor => {language: 'en', toolbar: 'comment'}, required: true, class: 'form-control', placeholder:'Your comments/questions' %>
-      </div>
-      <div class='actions'>
-        <%= f.submit class:'btn btn-primary' %>
-      </div>
-  <% end %>
+          <div class='actions'>
+            <%= f.submit class:'btn btn-primary' %>
+          </div>
+      <% end %>
+    </div>
+
+    <div id="sidebar" class="col-sm-2">
+      <h4>Recent Messages</h4>
+      <ul>
+        <% messages = Message.all.order('created_at DESC') %>
+        <% messages.each do |message| %>
+          <li>* <%= link_to message.title, message %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>  
 </div>

@@ -6,6 +6,7 @@ gem 'bootstrap-sass', '3.1.1.0'
 gem 'turbolinks_transitions'
 gem 'nav_lynx'
 gem 'font-awesome-rails'
+gem 'friendly_id', '~> 5.1.0'
 gem 'mail_form'
 gem 'simple_form'
 gem 'yt', '~> 0.13.7'
@@ -17,6 +18,7 @@ gem 'ckeditor'
 gem 'ckeditor-imgur'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'font-awesome-rails'
 
 group :development do
   # Use sqlite3 as the database for Active Record

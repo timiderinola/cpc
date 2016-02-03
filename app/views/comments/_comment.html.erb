@@ -1,8 +1,10 @@
 <p><%= comment.author %> said:</p>
 
-<blockquote>
+<blockquote class="comment">
   <%= raw comment.content %>
 </blockquote>
 
-<%= link_to 'Remove comment', [comment.message, comment],
+<% if logged_in? %>
+  <%= link_to 'Remove comment', [comment.message, comment],
             method: :delete, data: { comfirm: 'Are you sure?' } %>
+<% end %>            

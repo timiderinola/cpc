@@ -46,7 +46,7 @@ body {
   background: inherit;
 }
 
-#fat-menu a:hover {
+#fat-menu a:hover, #fat-menu a.selected {
   color: #fff;
 }
 #fat-menu a {
@@ -81,7 +81,7 @@ body {
   background-color: transparent;
 }
 
-#nav-links li a:hover {
+#nav-links li a:hover, #nav-links li a.selected {
   border-bottom: 2px solid #000000;
 }
 
@@ -319,11 +319,36 @@ body {
   margin: auto;
 }
 
+#message-container {
+  padding: 1em;
+}
+
 .message-thumb {
   padding: 2em;
   border: 2px solid #337ab7;
   border-radius: 5px;
   margin-right: 1em;
+}
+
+#sidebar {
+  margin: 3.5em 0 1em 3em;
+  color: #337ab7;
+  max-width: 90%;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+.comment {
+  font-size: 1em;
+  margin-left: 1em;
 }
 
 /* Footer */
